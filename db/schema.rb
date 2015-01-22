@@ -11,35 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150122031425) do
+ActiveRecord::Schema.define(version: 20150122060523) do
 
   create_table "options", force: :cascade do |t|
-    t.string   "options",      null: false
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.integer  "questions_id", null: false
+    t.string   "options",     null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "question_id", null: false
   end
 
-  add_index "options", ["questions_id"], name: "index_options_on_questions_id"
+  add_index "options", ["question_id"], name: "index_options_on_question_id"
 
   create_table "questions", force: :cascade do |t|
     t.text     "question"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "surveys_id", null: false
+    t.integer  "survey_id",  null: false
   end
 
-  add_index "questions", ["surveys_id"], name: "index_questions_on_surveys_id"
+  add_index "questions", ["survey_id"], name: "index_questions_on_survey_id"
 
   create_table "responses", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "options_id", null: false
-    t.integer  "users_id",   null: false
+    t.integer  "option_id",  null: false
+    t.integer  "user_id",    null: false
   end
 
-  add_index "responses", ["options_id"], name: "index_responses_on_options_id"
-  add_index "responses", ["users_id"], name: "index_responses_on_users_id"
+  add_index "responses", ["option_id"], name: "index_responses_on_option_id"
+  add_index "responses", ["user_id"], name: "index_responses_on_user_id"
 
   create_table "roles", force: :cascade do |t|
     t.string   "name"
@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 20150122031425) do
     t.string   "gender"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "roles_id",   null: false
+    t.integer  "role_id",    null: false
   end
 
 end
