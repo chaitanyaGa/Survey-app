@@ -7,4 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
     Role.create(name: "admin")
     Role.create(name: "user")
+    u = User.create(name: "sushant",email: "@hu",age: 12,role_id: 12, gender: "M")
+    u = User.create!(name: "sushant",role_id: 12, gender: "yu")
+
 
