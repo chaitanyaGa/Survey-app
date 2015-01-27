@@ -1,3 +1,3 @@
 class Role < ActiveRecord::Base
-  has_many :users, dependant :destroy
+  has_many :users
 end
