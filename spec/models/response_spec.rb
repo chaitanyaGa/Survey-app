@@ -1,6 +1,12 @@
-require_relative '../../app/models/response.rb'
+require 'rails_helper'
 
-RSpec.describe Response do
-  it "has unique user and option combination"
+RSpec.describe Response, :type => :model do
+
+  before(:each)do
+    @response = FactoryGirl.create(:response)
+  end
+
+  it "has user" do
+    p @response
+  end
 end
-
