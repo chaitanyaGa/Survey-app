@@ -1,0 +1,10 @@
+%h2 
+  edit question
+  %br
+
+= form_for(@question) do |f|
+  = f.label 'question'
+  = f.text_area :name
+  %br
+  =f.submit
+= link_to 'questions', survey_questions_path(@survey.id)

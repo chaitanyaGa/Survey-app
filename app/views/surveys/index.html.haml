@@ -1,0 +1,38 @@
+%p
+  "hi this is first page on server"
+
+= flash[:notice]
+%table
+  %tr
+    %th Survay name
+    %th Survey Type
+    %th no of question
+    %th conduct date
+    %th show
+    %th edit
+    %th delete
+  - @surveys.each do |survey|
+    %tr
+      %td= survey.name
+      %td= survey.type_of_survey
+      %td= survey.question_count
+      %td= survey.conducted
+      %td= link_to 'show',survey_path(survey.id)
+      %td= link_to 'edit',edit_survey_path(survey.id) 
+      %td= link_to 'delete',survey_path(survey.id), method: :delete
+%table
+  %tr
+    %th name
+    %th gender
+    %th email
+    %th age
+    %th role id
+  - @users.each do |user|
+    %tr
+      %td= user.name
+      %td= user.gender
+      %td= user.email
+      %td= user.age
+      %td= user.role_id
+= link_to 'create new survey', new_survey_path
+

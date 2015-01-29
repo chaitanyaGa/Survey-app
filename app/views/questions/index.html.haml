@@ -1,0 +1,14 @@
+%p
+  Questions for Survey :
+  = @survey.id
+  %br
+  -@questions.each do |q|
+    = q.question
+    = link_to 'edit',edit_survey_question_path(@survey.id,q.id)
+    = link_to 'delete',survey_question_path(@survey.id,q.id), method: :delete
+    %br
+
+= link_to 'create', new_survey_question_path(@survey.id)
+= link_to 'back',survey_path(@survey.id)
+
+

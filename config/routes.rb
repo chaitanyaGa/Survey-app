@@ -52,8 +52,9 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-    resources 'surveys'
+    resources 'surveys'do
+      resources 'questions'
+    end
     root 'surveys#index'
-    get '/surveys/show'
 
 end

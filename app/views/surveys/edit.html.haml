@@ -1,5 +1,5 @@
-%h3
-  This is new Survey
+%p 
+  here edit the survey
   %br
 = form_for(@survey) do |f|
   = f.label :name
@@ -13,7 +13,9 @@
   %br
   = f.label 'Question count'
   = f.text_field :question_count
-  %br
-  %br
   = f.submit
+  %br
+  %br
 = link_to 'home', surveys_path
+
+
