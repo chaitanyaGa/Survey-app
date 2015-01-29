@@ -1,8 +1,20 @@
 class SurveysController < ApplicationController
 
-  def index 
+  # action
+  def index
   end
 
-  def show 
+  def show
   end
+
+  def new
+  end
+
+  def create
+  end
+
+  def survey_params
+    params.require(:survey).permit(:name,:survey_type)
+  end
+
 end
