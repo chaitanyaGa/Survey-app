@@ -9,6 +9,8 @@ class Question < ActiveRecord::Base
   after_create :modify_count
   after_destroy :modify_count
 
+  accepts_nested_attributes_for :options
+
   def modify_count
     puts "increase count of survey"
     questions_count = self.survey.questions.count

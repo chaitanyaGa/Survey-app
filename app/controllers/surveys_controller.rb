@@ -12,6 +12,9 @@ class SurveysController < ApplicationController
 
   def new
     @survey = Survey.new
+    #2.times do
+     # @question = @survey.questions.build
+    #end
   end
 
   def update

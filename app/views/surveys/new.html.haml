@@ -6,7 +6,7 @@
   = f.text_field :name
   %br
   = f.label 'type of survey'
-  = f.text_field :type_of_survey
+  = f.select :type_of_survey, Survey::TYPES,include_blank: true
   %br
   = f.label 'conducted on'
   = f.date_select :conducted

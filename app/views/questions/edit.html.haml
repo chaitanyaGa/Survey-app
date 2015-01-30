@@ -2,9 +2,15 @@
   edit question
   %br
 
-= form_for(@question) do |f|
-  = f.label 'question'
-  = f.text_area :name
+= form_for(@question,url: survey_question_path(@survey.id,@question.id),method: :patch ) do |f|
+  = f.label 'Description'
+  = f.text_area :question
   %br
+  options:
+  = f.fields_for(:options) do |option|
+    = option.label 'options'
+    = option.text_field :option
+    %br
+    %br
   =f.submit
 = link_to 'questions', survey_questions_path(@survey.id)

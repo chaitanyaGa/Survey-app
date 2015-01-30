@@ -1,4 +1,5 @@
 %p
+  = flash[:notice]
   Questions for Survey :
   = @survey.id
   %br
@@ -6,6 +7,7 @@
     = q.question
     = link_to 'edit',edit_survey_question_path(@survey.id,q.id)
     = link_to 'delete',survey_question_path(@survey.id,q.id), method: :delete
+    = link_to 'view', survey_question_path(@survey.id,q.id)
     %br
 
 = link_to 'create', new_survey_question_path(@survey.id)
