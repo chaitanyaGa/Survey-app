@@ -19,7 +19,7 @@
       %td= survey.conducted
       %td= link_to 'show',survey_path(survey.id)
       %td= link_to 'edit',edit_survey_path(survey.id) 
-      %td= link_to 'delete',survey_path(survey.id), method: :delete
+      %td= link_to 'delete',survey_path(survey.id), method: :delete,data: { confirm: "Are you sure?" }
 %table
   %tr
     %th name
