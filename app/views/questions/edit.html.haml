@@ -1,16 +1,19 @@
 %h2 
-  edit question
+  Edit question
   %br
 
 = form_for(@question,url: survey_question_path(@survey.id,@question.id),method: :patch ) do |f|
   = f.label 'Description'
   = f.text_area :question
   %br
-  options:
+  %p
+    options:
   = f.fields_for(:options) do |option|
     = option.label 'options'
     = option.text_field :option
     %br
     %br
   =f.submit
-= link_to 'questions', survey_questions_path(@survey.id)
+.links
+  = link_to 'questions', survey_questions_path(@survey.id)
+  = link_to 'logout',logout_path

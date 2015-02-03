@@ -1,6 +1,7 @@
 %p
   show
-  description
+  %br
+  description:
   = @question.question
   %br
   Options:
@@ -9,3 +10,5 @@
     %br
   = link_to 'back',survey_path(@survey.id)
   = link_to 'edit',edit_survey_question_path(@survey.id,@question.id)
+.links
+  = link_to 'logout',logout_path

@@ -1,6 +1,7 @@
 class Survey < ActiveRecord::Base
-  TYPES = ['event','general']
-  has_many :questions
+  TYPES = ['event','general','sports']
+  has_many :questions, dependent: :destroy
+  validates_numericality_of :question_count,:only_integer => true
 #  after_create :titeleize if :question
   
 end

@@ -1,19 +1,28 @@
-%h3
+%h2
   This is new Survey
-  %br
+.action
+  = flash[:notice]
+
+%br
 = form_for(@survey) do |f|
   = f.label :name
   = f.text_field :name
   %br
+  %br
   = f.label 'type of survey'
   = f.select :type_of_survey, Survey::TYPES,include_blank: true
   %br
+  %br
   = f.label 'conducted on'
   = f.date_select :conducted
+  %br
   %br
   = f.label 'Question count'
   = f.text_field :question_count
   %br
   %br
   = f.submit
-= link_to 'home', surveys_path
+.links
+  = link_to 'home', surveys_path
+  |
+  = link_to 'logout',logout_path

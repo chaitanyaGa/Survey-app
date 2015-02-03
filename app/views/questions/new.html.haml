@@ -1,13 +1,12 @@
 %p
   creating new question
-
 = form_for [@survey,@question] do |f|
   = f.label 'description'
   = f.text_area :question
   %br
-  *******************
-  = :options
-  *************
+  %br
+  =f.label ' ******************* options ******************'
+  %br
   %br
   = f.fields_for :options do |option|
     = option.label 'options'
@@ -15,4 +14,7 @@
     %br
     %br
   = f.submit
-= link_to 'questions', survey_questions_path(@survey.id)
+.links
+  = link_to 'questions', survey_questions_path(@survey.id)
+  |
+  = link_to 'logout',logout_path

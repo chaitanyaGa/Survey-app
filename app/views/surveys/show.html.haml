@@ -1,19 +1,27 @@
-%h2
+%p
   This is show page
-  %h4
+  %p
     survey name:
     = @survey.name
+    %br
     %br
     Survey type:
     = @survey.type_of_survey
     %br
+    %br
     no of question:
     = @survey.question_count
+    %br
     %br
     conducted:
     = @survey.conducted
     %br
+    %br
     no of people:
     = @survey.no_of_people
-= link_to 'questions',survey_questions_path(@survey.id)
-= link_to 'home', surveys_path
+.links
+  = link_to 'questions',survey_questions_path(@survey.id)
+  |
+  = link_to 'home', surveys_path
+  |
+  = link_to 'logout',logout_path

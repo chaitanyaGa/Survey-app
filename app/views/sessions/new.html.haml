@@ -1,0 +1,16 @@
+%p{:class => "message", :id => "code"}
+  login page 
+  .action
+    = flash[:notice]
+  = form_for @login, url: sessions_path do |f|
+    = f.label 'username:'
+    = f.text_field :username
+    %br
+    %br
+    = f.label 'password :'
+    = f.password_field :password
+    %br
+    %br
+    = f.submit 'login'
+  .links
+    = link_to 'sign up', new_registrations_path

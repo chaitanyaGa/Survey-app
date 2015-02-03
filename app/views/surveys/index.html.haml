@@ -1,7 +1,10 @@
 %p
-  "hi this is first page on server"
-
-= flash[:notice]
+  hi!!!
+%p 
+  welcome
+  = @users.find(session[:userid]).name
+.action
+  = flash[:notice]
 %table
   %tr
     %th Survay name
@@ -20,6 +23,7 @@
       %td= link_to 'show',survey_path(survey.id)
       %td= link_to 'edit',edit_survey_path(survey.id) 
       %td= link_to 'delete',survey_path(survey.id), method: :delete,data: { confirm: "Are you sure?" }
+%br
 %table
   %tr
     %th name
@@ -34,4 +38,6 @@
       %td= user.email
       %td= user.age
       %td= user.role_id
-= link_to 'create new survey | ', new_survey_path
+.links
+  = link_to 'create new survey | ', new_survey_path
+  = link_to 'logout',logout_path

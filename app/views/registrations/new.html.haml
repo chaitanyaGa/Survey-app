@@ -1,0 +1,40 @@
+%p{:class => "message", :id => 'code'}
+  sign up for participation in survey
+.action
+  = flash[:notice]
+  = flash[:messag]
+%br
+= form_for @user, url: registrations_path do |f|
+  = f.label 'username :'
+  = f.text_field :username
+  %br
+  %br
+  = f.label 'email :'
+  = f.text_field :email
+  %br
+  %br
+  = f.label 'password :'
+  = f.password_field :password, size: 10
+  %br
+  %br
+  = f.label 'confirm password :'
+  = f.password_field :password_confirmation, size: 10
+  %br
+  %br
+  = f.label 'name :'
+  = f.text_field :name
+  %br
+  %br
+  = f.label 'age :'
+  = f.text_field :age, size: 10
+  %br
+  %br
+  = f.label 'role id :'
+  = f.select :role_id, ['2'], include_blank: true
+  %br
+  %br
+  = f.label 'gender :'
+  = f.select :gender, ['M','F'], include_blank: true
+  %br
+  %br
+  = f.submit

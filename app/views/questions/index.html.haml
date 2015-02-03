@@ -1,7 +1,10 @@
 %p
-  = flash[:notice]
+  .action
+    = flash[:notice]
+%p
   Questions for Survey :
   = @survey.id
+  %br
   %br
   -@questions.each do |q|
     = q.question
@@ -9,8 +12,12 @@
     = link_to 'delete',survey_question_path(@survey.id,q.id), method: :delete,data: { confirm: "Are you sure?" }
     = link_to 'view', survey_question_path(@survey.id,q.id)
     %br
+    %br
 
-= link_to 'create', new_survey_question_path(@survey.id)
-= link_to 'back',survey_path(@survey.id)
-
+.links
+  = link_to 'create', new_survey_question_path(@survey.id) 
+  |
+  = link_to 'back',survey_path(@survey.id) 
+  |
+  = link_to 'logout',logout_path
 

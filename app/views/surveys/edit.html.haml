@@ -1,21 +1,25 @@
-%p 
+%p
   here edit the survey
   %br
 = form_for(@survey) do |f|
-  = f.label :name
+  = f.label 'name:'
   = f.text_field :name
   %br
-  = f.label 'type of survey'
+  %br
+  = f.label 'type of survey:'
   = f.text_field :type_of_survey
   %br
-  = f.label 'conducted on'
+  %br
+  = f.label 'conducted on:'
   = f.date_select :conducted
   %br
-  = f.label 'Question count'
+  %br
+  = f.label 'Question count:'
   = f.text_field :question_count
   = f.submit
   %br
   %br
-= link_to 'home', surveys_path
-
-
+.links
+  = link_to 'home', surveys_path 
+  |
+  = link_to 'logout',logout_path
