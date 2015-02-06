@@ -15,18 +15,24 @@ class User < ActiveRecord::Base
 
 
   # callbacks
-  before_save :name_capital
-  after_initialize do |user|
+  before_save :name_capital unless 'single_name?'
+
+  def single_name?
+    self.name.to_a.length == 1 ? true : false
+  end
+
+=begin  after_initialize do |user|
     puts "You have initialized an object!"
   end
 
   after_find do |user|
     puts "You have found an object!"
   end
+=end
   private
 
   def name_capital
-    puts "Name is capitalize:"
+    puts "Name is capitalizeid:"
     self.name =  name.downcase.titleize
   end
 

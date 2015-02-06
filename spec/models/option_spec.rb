@@ -2,9 +2,13 @@ require_relative '../../app/models/option.rb'
 
 RSpec.describe Option do
 
-  it "has only one question"
+  it "has only one question"do
+  end
 
-  it "is selected by  multiple users"
+  it "is selected by  multiple users"do
+  end
 
-  it "unique for each question"
+  it "unique for each question"do
+  end
+
 end

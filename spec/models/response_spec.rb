@@ -7,6 +7,6 @@ RSpec.describe Response, :type => :model do
   end
 
   it "has user" do
-    p @response
+    expect(@response.user_id).not_to eq nil
   end
 end

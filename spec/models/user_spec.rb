@@ -9,18 +9,35 @@ RSpec.describe User, :type => :model do
     p user.inspect
   end
 =end
-  before(:each)do
-    @user = FactoryGirl.create(:user, :name => "Rails")
+
+  context '#admin'do
+
+    before(:each)do
+      @user = FactoryGirl.create(:user, :name => "Rails")
+    end
+
+    it " has role 1" do
+      expect(@user.role_id).to eq 1
+    end
+
   end
 
-  it "has role" do
-    p @user
-  end
- #   puts @user.inspect
+  context '#normal user' do
 
-  it "has password and username"
+    before(:each)do
+      @user = FactoryGirl.create(:user, :role_id => 2)
+    end
 
-  it "participate in survey"
+    it "has password "do
+      expect(@user.authenticate('abc')).to be == @user
+    end
 
+    it 'has username' do
+      expect(@user.username).not_to eq nil
+    end
 
+    it "participate in survey"do
+    end
+
+    end
 end

@@ -57,12 +57,6 @@ class SurveysController < ApplicationController
 
   private
 
-  def user_login
-    if !session[:userid]
-      flash[:notice] = 'you are not logged in'
-      redirect_to :controller => 'sessions', :action => 'new'
-    end
-  end
 
   def survey_params
     params.require(:survey).permit(:name,:type_of_survey,:conducted,:question_count)
