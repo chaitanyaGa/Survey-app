@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
 
 
   # callbacks
-  before_save :name_capital unless 'single_name?'
+  before_save :name_capital unless :single_name?
 
   def single_name?
     self.name.to_a.length == 1 ? true : false

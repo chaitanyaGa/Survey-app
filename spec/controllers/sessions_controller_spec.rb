@@ -33,7 +33,7 @@ RSpec.describe SessionsController, :type => :controller do
     end
 
     it 'renders the new template for wrong user name'do
-      post :new, 'user' =>{'username'=> '',password; => '12' }
+      post :new, 'user' =>{'username'=> '',password: '12' }
     end
 
     it 'renders the survey#index for right user name and password'do

@@ -1,10 +1,16 @@
-require_relative '../../app/models/question.rb'
+require 'rails_helper'
 
 RSpec.describe Question do
-  it "has options ssociated with it"do
+  let(:question)do
+    FactoryGirl.create(:question)
   end
 
-  it "is a part of survey"do
+  it "has zero or more options ssociated with it"do
+    expect(question.options.count).to be >= 0
+  end
+
+  it "is must belong to survey"do
+    expect(question.survey).not_to be nil
   end
 
   it "is answered by no users"do

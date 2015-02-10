@@ -11,7 +11,6 @@ RSpec.describe User, :type => :model do
 =end
 
   context '#admin'do
-
     before(:each)do
       @user = FactoryGirl.create(:user, :name => "Rails")
     end
@@ -19,7 +18,6 @@ RSpec.describe User, :type => :model do
     it " has role 1" do
       expect(@user.role_id).to eq 1
     end
-
   end
 
   context '#normal user' do
@@ -38,6 +36,6 @@ RSpec.describe User, :type => :model do
 
     it "participate in survey"do
     end
+  end
 
-    end
 end
