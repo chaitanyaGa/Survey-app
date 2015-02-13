@@ -12,5 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require webcam.js
+//= require helper.js
 //= require turbolinks
-//= require_tree .
+//= require_tree 

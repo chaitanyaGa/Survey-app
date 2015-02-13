@@ -31,7 +31,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+ # gems for qrcode and images
+gem 'rqrcode_png'
+gem 'rqrcode'
+gem 'rqrcode-rails3'
+gem 'mini_magick'
 gem 'haml-rails'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -27,6 +27,20 @@ class QuestionsController < ApplicationController
   def show
     @survey = Survey.find(params[:survey_id])
     @question = @survey.questions.find(params[:id])
+    
+=begin
+    respond_to do |format|
+      format.html
+      format.svg  { render :qrcode => request.url, :level => :l, :unit => 10 }
+      format.png  { render :qrcode => request.url }
+      format.gif  { render :qrcode => request.url }
+      format.jpeg { render :qrcode => request.url }
+    end
+
+=end
+    @qr = RQRCode::QRCode.new(@question.question + @question.options.all.pluck(:option).to_s+"\n recorded at:"+ Time.now.strftime("%d.%m.%y %H:%M"), :size => 12, :level => :h )
+    @image = @qr.to_img
+    @image.resize(300,300).save("./app/assets/images/c.png")
   end
 
   def destroy

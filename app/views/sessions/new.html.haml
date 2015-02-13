@@ -1,4 +1,4 @@
-%p{:class => "message", :id => "code"}
+%p{:class => "message", :id => "code", :datatoken => form_authenticity_token}
   login page 
   .action
     = flash[:notice]
@@ -14,3 +14,8 @@
     = f.submit 'login'
   .links
     = link_to 'sign up', new_registrations_path
+  %div{id: 'container'}
+    %div{id:  'my_camera'}
+    %div{id: 'my_result'}
+    .links
+      %button{type:'button',onclick: "javascript:take_snapshot()",title: 'take snapshot'} take snapshot

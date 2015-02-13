@@ -63,13 +63,14 @@ table,td
 {
     text-align: center;
     margin-left: 20%;
-    border-radius: 25px;
+    border-radius: 2px;
 }
 
 th
 {
     background-color: #FF6600;
     border-radius: 10px;
+    border-color: blue;
 }
 
 .links
@@ -78,10 +79,36 @@ th
   color: white;
 }
 
+#container
+{
+  width: 800px;
+  height: 280px;
+  border-style: solid;
+  border-color:black;
+  margin-left: 15%;
+}
+#my_camera
+{
+width:320px;
+height:240px;
+border-style: solid;
+border-color: red;
+margin-left:8%;
+}
+
+#my_result
+{
+  width: 320px;
+  height: 246px;
+  border-style: solid;
+  border-color: red;
+  margin-left: 55%;
+  margin-top: -31.5%;
+}
 a
 {
  // color: #660066;
- color: white;
+ color: blue;
 }
 
 h2

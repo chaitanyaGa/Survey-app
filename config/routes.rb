@@ -60,8 +60,10 @@ Rails.application.routes.draw do
     end
 
     resource 'sessions' do
+      post '/upload' => 'myscripts#save'
     end
 #  root 'surveys#index'
    root 'sessions#new'
    get '/logout' => 'sessions#destroy'
+
 end
